@@ -1,0 +1,29 @@
+{
+  "name": "personal-finance-app-client",
+  "private": true,
+  "version": "0.0.1",
+  "description": "An app for my personal finance",
+  "scripts": {
+    "test": "",
+    "start": "",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianchan035/personal-finance-app-client.git"
+  },
+  "keywords": [
+    "personal",
+    "finance"
+  ],
+  "author": "ianchan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianchan035/personal-finance-app-client/issues"
+  },
+  "homepage": "https://github.com/ianchan035/personal-finance-app-client#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
