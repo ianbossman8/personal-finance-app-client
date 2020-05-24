@@ -1,10 +1,14 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
+
+const styledComponentsTransformer = createStyledComponentsTransformer();
 
 module.exports = {
   resolve: {
-    extensions: [ '.ts', '.tsx'],
+    extensions: [ '.ts', '.tsx', '.js'],
   },
   module: {
     rules: [
@@ -13,7 +17,10 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "ts-loader"
+            loader: "ts-loader",
+            options: {
+              getCustomTransformers: () => ({ before: [styledComponentsTransformer] })
+          }
           }
         ]
       },
@@ -36,7 +43,8 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html",
       title: 'Personal Finance App'
-    })
+    }),
+    new AntdDayjsWebpackPlugin()
   ],
   output: {
     filename: '[name].[contenthash].js',
