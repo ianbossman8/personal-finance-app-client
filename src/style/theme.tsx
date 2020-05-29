@@ -1,12 +1,12 @@
 import { DefaultTheme } from 'styled-components'
 
-const myTheme: DefaultTheme = {
+const theme: DefaultTheme = {
   borderRadius: '5px',
 
   colors: {
     main: 'cyan',
-    secondary: 'magenta',
-  },
+    secondary: 'magenta'
+  }
 }
 
-export { myTheme }
+export { theme }
