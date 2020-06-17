@@ -7,3 +7,15 @@ before_install:
 
 script:
   - docker run web/personal-finance-app-client npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-west-2'
+  app: 'personal-finance-app-client'
+  env: 'PersonalFinanceAppClient-env'
+  bucket_name: 'elasticbeanstalk-eu-west-2-406965596077'
+  bucket_path: 'personal-finance-app-client'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
