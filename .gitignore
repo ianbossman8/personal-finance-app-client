@@ -7,3 +7,6 @@ node_modules
 # Ignore dist and build folder
 dist
 build
+
+# Ignore vscode settings
+.vscode
