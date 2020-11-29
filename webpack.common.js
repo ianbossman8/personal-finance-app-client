@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -53,7 +52,7 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: 'single',
-    moduleIds: 'hashed',
+    moduleIds: 'deterministic',
     splitChunks: {
       cacheGroups: {
         vendor: {

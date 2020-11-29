@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const merge = require('webpack-merge')
+const os = require('os')
+const { merge } = require('webpack-merge')
 const common = require('./webpack.common')
 
 module.exports = merge(common, {
@@ -7,6 +7,8 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    port: 3000,
+    open: os.version().split(' ')[0] === 'Darwin' ? 'Google Chrome' : ''
   }
 })
