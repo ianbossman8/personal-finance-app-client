@@ -1,15 +1,11 @@
-# Ignore Mac system files
-.DS_store
 
-# Ignore node_modules folder
+# Standard
 node_modules
-
-# Ignore dist and build folder
+.DS_store
+.vscode
 dist
 build
-
-# Ignore coverage folder
 coverage
+docker-compose.yml
 
-# Ignore vscode settings
-.vscode
+
