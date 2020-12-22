@@ -1,0 +1,9 @@
+enum Constants {
+  SIGN_UP = 'SIGN_UP',
+  SIGNING_UP = 'SIGNING_UP',
+  SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS',
+  SIGN_UP_ERROR = 'SIGN_UP_ERROR',
+  CONFIRM_REGISTRATION = 'CONFIRM_REGISTRATION'
+}
+
+export default Constants

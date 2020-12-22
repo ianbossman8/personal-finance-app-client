@@ -7,6 +7,8 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
+    hot: true,
+    watchContentBase: true,
     host: '0.0.0.0',
     port: 3000,
     open: os.version().split(' ')[0] === 'Darwin' ? 'Google Chrome' : ''

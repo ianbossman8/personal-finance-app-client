@@ -1,4 +1,6 @@
 const path = require('path')
+const dotenv = require('dotenv')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
@@ -6,6 +8,18 @@ const createStyledComponentsTransformer = require('typescript-plugin-styled-comp
   .default
 
 const styledComponentsTransformer = createStyledComponentsTransformer()
+
+function envVar() {
+  const env = dotenv.config().parsed
+
+  return Object.entries(env).reduce(
+    (acc, [key, val]) => ({
+      ...acc,
+      [key]: val
+    }),
+    {}
+  )
+}
 
 module.exports = {
   resolve: {
@@ -38,6 +52,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.EnvironmentPlugin(envVar()),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',

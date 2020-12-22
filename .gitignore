@@ -7,5 +7,6 @@ dist
 build
 coverage
 docker-compose.yml
+.env
 
 
