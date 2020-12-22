@@ -23,6 +23,9 @@ module.exports = {
     'no-shadow': 'error',
     'comma-spacing': ['error', { before: false, after: true }],
     'key-spacing': ['error', { afterColon: true }],
-    'keyword-spacing': ['error', { before: true }]
+    'keyword-spacing': ['error', { before: true }],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
+    '@typescript-eslint/no-explicit-any': 'off'
   }
 }
