@@ -1,4 +1,4 @@
-FROM node:15.3.0-alpine3.10
+FROM node:alpine
 WORKDIR /app
 COPY package.json .
 RUN npm i --legacy-peer-deps
