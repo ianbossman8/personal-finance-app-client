@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "build starting after successful testing"
 echo "current job on branch $TRAVIS_BRANCH"
 echo "pull request $TRAVIS_PULL_REQUEST"
 if [ "$TRAVIS_BRANCH" == "master" ] && [ $TRAVIS_PULL_REQUEST == false ]
