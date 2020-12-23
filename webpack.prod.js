@@ -8,8 +8,8 @@ module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
     new webpack.EnvironmentPlugin({
-      USER_POOL_ID: process.env.USER_POOL_ID,
-      CLIENT_ID: process.env.CLIENT_ID
+      COGNITO_USER_POOL_ID: process.env.COGNITO_USER_POOL_ID,
+      COGNITO_CLIENT_ID: process.env.COGNITO_CLIENT_ID
     })
   ],
   module: {
