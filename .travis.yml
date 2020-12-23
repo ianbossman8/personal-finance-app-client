@@ -9,7 +9,7 @@ script:
   - docker run -e CI=true personal-finance-app-client npm run test
 
 after_success:
-  - docker build --build-arg $COGNITO_USER_POOL_ID --build-arg $COGNITO_CLIENT_ID -t ian035/personal-finance-app-client .
+  - docker build --build-arg "$COGNITO_USER_POOL_ID" --build-arg "$COGNITO_CLIENT_ID" -t ian035/personal-finance-app-client .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push ian035/personal-finance-app-client
 
