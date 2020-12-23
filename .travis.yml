@@ -3,6 +3,7 @@ services:
   - docker
 
 before_install:
+  - echo "building dev image"
   - docker build -t personal-finance-app-client -f Dockerfile.dev .
 
 script:
