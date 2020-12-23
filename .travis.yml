@@ -3,13 +3,13 @@ services:
   - docker
 
 before_install:
-  - docker build -t client/personal-finance-app-client -f Dockerfile.dev .
+  - docker build -t personal-finance-app-client -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true client/personal-finance-app-client npm run test
+  - docker run -e CI=true personal-finance-app-client npm run test
 
 after_success:
-  - docker build -t --build-arg $COGNITO_USER_POOL_ID --build-arg $COGNITO_CLIENT_ID ian035/personal-finance-app-client .
+  - docker build --build-arg $COGNITO_USER_POOL_ID --build-arg $COGNITO_CLIENT_ID -t ian035/personal-finance-app-client .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push ian035/personal-finance-app-client
 
