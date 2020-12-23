@@ -1,7 +1,11 @@
 FROM node:alpine
+ARG USER_POOL_ID
+ARG CLIENT_ID
+ENV USER_POOL_ID=$USER_POOL_ID
+ENV CLIENT_ID=$CLIENT_ID
 WORKDIR /app
 COPY package.json .
-RUN npm i --legacy-peer-deps
+RUN npm i
 COPY . .
 RUN npm run build
 

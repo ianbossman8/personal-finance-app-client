@@ -1,9 +1,24 @@
 const os = require('os')
+const webpack = require('webpack')
+const dotenv = require('dotenv')
 const { merge } = require('webpack-merge')
 const common = require('./webpack.common')
 
+function envVar() {
+  const env = dotenv.config().parsed
+
+  return Object.entries(env).reduce(
+    (acc, [key, val]) => ({
+      ...acc,
+      [key]: val
+    }),
+    {}
+  )
+}
+
 module.exports = merge(common, {
   mode: 'development',
+  plugins: [new webpack.EnvironmentPlugin(envVar())],
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
